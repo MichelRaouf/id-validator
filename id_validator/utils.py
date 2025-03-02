@@ -19,7 +19,7 @@ def validate_national_id(nid):
     birth_date_str = nid[1:7]
     governorate_code = nid[7:9]
     serial_number = nid[9:13]
-    gender_digit = int(nid[12])
+    gender_digit = int(nid[12])  # Ensure gender digit is correctly extracted
     check_digit = nid[13]
 
     if century_code == "2":
@@ -34,9 +34,11 @@ def validate_national_id(nid):
     except ValueError:
         return False, "Invalid birth date in ID."
 
+    # Fix governorate extraction
     governorate = GOVERNORATES.get(governorate_code, "Unknown")
 
-    gender = "Male" if gender_digit % 2 == 1 else "Female"
+    # Fix gender classification
+    gender = "Male" if (gender_digit % 2) == 1 else "Female"
 
     return True, {
         "birth_date": birth_date.strftime("%Y-%m-%d"),

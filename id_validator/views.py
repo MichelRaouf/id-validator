@@ -5,7 +5,7 @@ from rest_framework_api_key.permissions import HasAPIKey
 from .utils import validate_national_id
 
 class ValidateNationalIDView(APIView):
-    permission_classes = [HasAPIKey]  # Require API Key authentication
+    permission_classes = [HasAPIKey]
 
     def post(self, request):
         national_id = request.data.get("national_id")
