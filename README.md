@@ -9,7 +9,7 @@ This project is a Django-based API that validates Egyptian National IDs and extr
 To get started, clone the repository using the following command:
 
 ```sh
-git clone <repository-url>
+git clone https://github.com/MichelRaouf/id-validator
 cd national_id_api
 ```
 
