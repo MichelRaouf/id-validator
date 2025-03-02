@@ -24,7 +24,7 @@ jobs:
       - name: Install dependencies
         run: |
           python3 -m pip install --upgrade pip
-          pip3 install django djangorestframework drf-yasg django-ratelimit
+          pip3 install django djangorestframework drf-yasg django-ratelimit drf-api-keys
 
       - name: Run tests
         run: python manage.py test
